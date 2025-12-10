@@ -48,8 +48,8 @@ func part2(input string) {
 	var pos int = 50
 	var count int = 0
 
-	lines := strings.Split(input, string('\n'))
-	for _, line := range lines {
+	lines := strings.SplitSeq(input, string('\n'))
+	for line := range lines {
 		shift, err := strconv.ParseInt(line[1:], 10, 64)
 		if err != nil {
 			log.Fatal(err) // Sanity Check

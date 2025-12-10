@@ -19,7 +19,7 @@ func parseInput() []Range {
 	scanner.Scan()
 
 	var ranges []Range
-	for _, line := range strings.Split(scanner.Text(), ",") {
+	for line := range strings.SplitSeq(scanner.Text(), ",") {
 		limits := strings.Split(line, "-")
 		start, _ := strconv.Atoi(limits[0])
 		end, _ := strconv.Atoi(limits[1])

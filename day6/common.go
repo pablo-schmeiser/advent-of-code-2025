@@ -19,7 +19,7 @@ func parseInput() ([][]int, []bool) {
 	for i, line := range strings.Split(string(content), "\n") {
 		if i < NUM_ROW_COUNT {
 			parsedNums := make([]int, 0)
-			for _, s := range strings.Split(line, " ") {
+			for s := range strings.SplitSeq(line, " ") {
 				n, e := strconv.Atoi(s)
 
 				if e != nil {
@@ -31,11 +31,12 @@ func parseInput() ([][]int, []bool) {
 			nums = append(nums, parsedNums)
 		} else {
 			for _, s := range strings.Split(line, " ") {
-				if s == "+" {
+				switch s {
+				case "+":
 					opIsAdd = append(opIsAdd, true)
-				} else if s == "*" {
+				case "*":
 					opIsAdd = append(opIsAdd, false)
-				} else {
+				default:
 					continue
 				}
 			}
@@ -55,7 +56,7 @@ func parseInput2() ([][][]int, []bool) {
 	for i, line := range strings.Split(string(content), "\n") {
 		if i < NUM_ROW_COUNT {
 			parsedCells := make([][]int, 0)
-			for _, s := range strings.Split(line, " ") {
+			for s := range strings.SplitSeq(line, " ") {
 				_, e := strconv.Atoi(s)
 
 				if e != nil {
@@ -76,12 +77,13 @@ func parseInput2() ([][][]int, []bool) {
 			}
 			nums = append(nums, parsedCells)
 		} else {
-			for _, s := range strings.Split(line, " ") {
-				if s == "+" {
+			for s := range strings.SplitSeq(line, " ") {
+				switch s {
+				case "+":
 					opIsAdd = append(opIsAdd, true)
-				} else if s == "*" {
+				case "*":
 					opIsAdd = append(opIsAdd, false)
-				} else {
+				default:
 					continue
 				}
 			}
