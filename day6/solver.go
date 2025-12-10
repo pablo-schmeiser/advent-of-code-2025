@@ -38,6 +38,8 @@ func part1(nums [][]int, opIsAdd []bool) {
 }
 
 func part2(chars [][][]int, opIsAdd []bool) {
+	// TODO: Fix
+
 	if len(chars[0]) != len(opIsAdd) {
 		fmt.Println("Error: Length mismatch")
 		return

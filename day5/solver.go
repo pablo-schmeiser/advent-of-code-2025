@@ -67,6 +67,8 @@ func part1(input string) {
 }
 
 func part2(input string) {
+	// TODO: Fix
+
 	lines := strings.Split(input, string('\n'))
 	ranges := make([]Range, 0)
 
